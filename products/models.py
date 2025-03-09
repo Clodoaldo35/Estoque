@@ -37,7 +37,7 @@ class Product(models.Model):
     stock = models.IntegerField(default=0, verbose_name='Estoque') 
     is_active = models.BooleanField(default=True, verbose_name='Ativo')
     description = models.TextField(null=True, blank=True, verbose_name='Descrição')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Crido em')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Criado em')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Atualizado em')
 
     class Meta:
