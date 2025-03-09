@@ -109,6 +109,10 @@ LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
+# Formato da data e hora
+DATETIME_FORMAT = 'd-m-Y H:i'
+
+
 USE_I18N = True
 
 USE_TZ = True

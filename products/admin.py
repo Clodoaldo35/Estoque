@@ -9,11 +9,31 @@ class BrandAdmin(admin.ModelAdmin):
     search_fields = ['name']
     list_filter = ['is_active']
 
+    def created_at(self, obj):
+        return obj.created_at.strftime('%d-%m-%Y %H:%M')
+    created_at.admin_order_field = 'created_at'
+    created_at.short_description = 'Criado em'
+
+    def updated_at(self, obj):
+        return obj.updated_at.strftime('%d-%m-%Y %H:%M')
+    updated_at.admin_order_field = 'updated_at'
+    updated_at.short_description = 'Atualizado em'
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'is_active', 'description', 'created_at', 'updated_at']
     search_fields = ['name']
     list_filter = ['is_active']
+
+    def created_at(self, obj):
+        return obj.created_at.strftime('%d-%m-%Y %H:%M')
+    created_at.admin_order_field = 'created_at'
+    created_at.short_description = 'Criado em'
+
+    def updated_at(self, obj):
+        return obj.updated_at.strftime('%d-%m-%Y %H:%M')
+    updated_at.admin_order_field = 'updated_at'
+    updated_at.short_description = 'Atualizado em'
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -21,6 +41,17 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['title', 'brand__name', 'category__name']
     list_filter = ['is_active', 'brand', 'category']
     list_editable = ('stock',)
+    actions = ['export_to_csv']
+
+    def created_at(self, obj):
+        return obj.created_at.strftime('%d-%m-%Y %H:%M')
+    created_at.admin_order_field = 'created_at'
+    created_at.short_description = 'Criado em'
+
+    def updated_at(self, obj):
+        return obj.updated_at.strftime('%d-%m-%Y %H:%M')
+    updated_at.admin_order_field = 'updated_at'
+    updated_at.short_description = 'Atualizado em'
 
     def get_fields(self, request, obj=None):
         fields = list(super().get_fields(request, obj)) # Convertendo para lista
@@ -34,7 +65,6 @@ class ProductAdmin(admin.ModelAdmin):
         writer = csv.writer(response)
         writer.writerow(['titulo', 'marca', 'categoria', 'preço', 'estoque', 'ativo', 'descrição', 'criado em', 'atualizado em'])
         for product in queryset:
-            writer.writerow([product.title, product.brand.name, product.category.name, product.price, product.stock, product.is_active, product.description, product.created_at, product.updated_at])
+            writer.writerow([product.title, product.brand.name, product.category.name, product.price, product.stock, product.is_active, product.description, product.created_at.strftime('%d-%m-%Y %H:%M'), product.updated_at.strftime('%d-%m-%Y %H:%M')])
         return response
     export_to_csv.short_description = 'Exportar para CSV'
-    actions = ['export_to_csv']
