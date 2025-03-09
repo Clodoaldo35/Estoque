@@ -12,9 +12,9 @@ class Brand(models.Model):
         ordering = ['name']
         verbose_name = 'Marca'
 
-        def __str__(self):
-            return self.name
-        
+    def __str__(self):
+        return self.name
+
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Nome')
     is_active = models.BooleanField(default=True, verbose_name='Ativo')
@@ -26,8 +26,8 @@ class Category(models.Model):
         ordering = ['name']
         verbose_name = 'Categoria'
 
-        def __str__(self):
-            return self.name
+    def __str__(self):
+        return self.name
 
 class Product(models.Model):
     title = models.CharField(max_length=100, verbose_name='Título')
@@ -41,8 +41,8 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Atualizado em')
 
     class Meta:
-          ordering = ['title']
-          verbose_name = 'Produto'
+        ordering = ['title']
+        verbose_name = 'Produto'
 
     def __str__(self):
-        return self.title           
+        return self.title
