@@ -63,7 +63,7 @@ class ProductAdmin(admin.ModelAdmin):
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename="products.csv"'
         writer = csv.writer(response)
-        writer.writerow(['titulo', 'marca', 'categoria', 'preço', 'estoque', 'ativo', 'descrição', 'criado em', 'atualizado em'])
+        writer.writerow(['Titulo', 'Marca', 'Categoria', 'Preço', 'Estoque', 'Ativo', 'Descrição', 'Criado em', 'Atualizado em'])
         for product in queryset:
             writer.writerow([product.title, product.brand.name, product.category.name, product.price, product.stock, product.is_active, product.description, product.created_at.strftime('%d-%m-%Y %H:%M'), product.updated_at.strftime('%d-%m-%Y %H:%M')])
         return response
