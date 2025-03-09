@@ -1,7 +1,7 @@
 import csv
 from django.http import HttpResponse
 from django.contrib import admin
-from .models import Brand, Category, Product    
+from .models import Brand, Category, Product
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
@@ -20,12 +20,12 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'brand', 'category', 'price', 'stock', 'is_active', 'description', 'created_at', 'updated_at']
     search_fields = ['title', 'brand__name', 'category__name']
     list_filter = ['is_active', 'brand', 'category']
-    list_editable = ('stock',) # remova caso tenha descomentado anteriormente
+    list_editable = ('stock',)
 
     def get_fields(self, request, obj=None):
-        fields = super().get_fields(request, obj)
+        fields = list(super().get_fields(request, obj)) # Convertendo para lista
         if not obj:  # Adiciona 'stock' apenas no formulário de criação
-            return fields + ('stock',)
+            fields.append('stock') # Usando append para adicionar à lista
         return fields
 
     def export_to_csv(self, request, queryset):
@@ -37,4 +37,4 @@ class ProductAdmin(admin.ModelAdmin):
             writer.writerow([product.title, product.brand.name, product.category.name, product.price, product.stock, product.is_active, product.description, product.created_at, product.updated_at])
         return response
     export_to_csv.short_description = 'Exportar para CSV'
-    actions = ['export_to_csv']          
+    actions = ['export_to_csv']
