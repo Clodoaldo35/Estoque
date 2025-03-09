@@ -40,9 +40,9 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Crido em')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Atualizado em')
 
-class Meta:
-    ordering = ['title']
-    verbose_name = 'Produto'
+    class Meta:
+          ordering = ['title']
+          verbose_name = 'Produto'
 
     def __str__(self):
         return self.title           
