@@ -20,8 +20,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'brand', 'category', 'price', 'stock', 'is_active', 'description', 'created_at', 'updated_at']
     search_fields = ['title', 'brand__name', 'category__name']
     list_filter = ['is_active', 'brand', 'category']
-
-# list_editable = ('stock',) # remova caso tenha descomentado anteriormente
+    list_editable = ('stock',) # remova caso tenha descomentado anteriormente
 
     def get_fields(self, request, obj=None):
         fields = super().get_fields(request, obj)
