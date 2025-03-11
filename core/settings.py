@@ -131,7 +131,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
-    "site_title": "C & P",
-    "site_header": "C & P",
-    "site_brand": "C & P",
+    "site_title": "Campos & Paiva",
+    "site_header": "Campos & Paiva",
+    "site_brand": "Campos & Paiva",
+    "site_logo": "static/images/c:\Users\Clodoaldo Abades\Downloads\image.png",
+    
 }
