@@ -131,7 +131,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Ecommerce",
-    "site_header": "Ecommerce",
-    "site_brand": "Ecommerce",
+    "site_title": "C & P",
+    "site_header": "C & P",
+    "site_brand": "C & P",
 }
