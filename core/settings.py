@@ -130,15 +130,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-jazzmin_settings = {
-    # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "C & P",
-
-    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "C & P",
-
-    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "C & P",
-
-   
+JAZZMIN_SETTINGS = {
+    "site_title": "Ecommerce",
+    "site_header": "Ecommerce",
+    "site_brand": "Ecommerce",
 }
