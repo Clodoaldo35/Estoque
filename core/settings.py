@@ -134,6 +134,26 @@ JAZZMIN_SETTINGS = {
     "site_title": "Campos & Paiva",
     "site_header": "Campos & Paiva",
     "site_brand": "Campos & Paiva",
-    "site_logo": "static/images/c:\Users\Clodoaldo Abades\Downloads\image.png",
+   # "site_logo": "static/images/c:/Users/Clodoaldo Abades/Downloads/image.png",
     
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "Products.Brand": "fas fa-copyright",
+        "Products.Category": "fas fa-object-group",
+        "Products.Product": "fas fa-box",
+    },
+
+     # Welcome text on the login screen
+    "welcome_sign": "Bem-vindo a Campos & Paiva",
+
+    # Copyright on the footer
+    "copyright": "Campos & Paiva - Todos os direitos reservados ",
+
+    # The model admin to search from the search bar, search bar omitted if excluded
+    "search_model": ["products.Product",],
+
+    "show_ui_builder": True,
+    # Fieldsets to filter the models to search in the search bar
 }
