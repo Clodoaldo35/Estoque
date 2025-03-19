@@ -1,0 +1,25 @@
+# Ignore o ambiente virtual
+venv/
+
+# Ignore arquivos de banco de dados
+*.sqlite3
+
+# Ignore diretórios de cache do Python
+__pycache__/
+
+# Ignore arquivos de configuração do editor
+.vscode/
+.idea/
+
+# Ignore arquivos de log
+*.log
+
+# Ignore arquivos de compilação
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore arquivos de migração do Django
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
