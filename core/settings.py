@@ -20,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8%0b&tk0&2(1zktcmo2l^+a#uo5&3^2^lwt&0wfl-ru05_0%9='
+SECRET_KEY = (
+    'django-insecure-8%0b&tk0&2(1zktcmo2l^+a#uo5&3^2^lwt&0wfl-ru05_0%9='
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -90,16 +92,27 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
 
@@ -134,8 +147,7 @@ JAZZMIN_SETTINGS = {
     "site_title": "Campos & Paiva",
     "site_header": "Campos & Paiva",
     "site_brand": "Campos & Paiva",
-   # "site_logo": "static/images/c:/Users/Clodoaldo Abades/Downloads/image.png",
-    
+
     "icons": {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
@@ -145,13 +157,14 @@ JAZZMIN_SETTINGS = {
         "Products.Product": "fas fa-box",
     },
 
-     # Welcome text on the login screen
+    # Welcome text on the login screen
     "welcome_sign": "Bem-vindo a Campos & Paiva",
 
     # Copyright on the footer
     "copyright": "Campos & Paiva - Todos os direitos reservados ",
 
-    # The model admin to search from the search bar, search bar omitted if excluded
+    # The model admin to search from the search bar,
+    # search bar omitted if excluded
     "search_model": ["products.Product",],
 
     "show_ui_builder": True,
