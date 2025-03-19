@@ -22,6 +22,7 @@ class BrandAdmin(admin.ModelAdmin):
     updated_at.admin_order_field = 'updated_at'
     updated_at.short_description = 'Atualizado em'
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = [
@@ -39,6 +40,7 @@ class CategoryAdmin(admin.ModelAdmin):
         return obj.updated_at.strftime('%d-%m-%Y %H:%M')
     updated_at.admin_order_field = 'updated_at'
     updated_at.short_description = 'Atualizado em'
+
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
