@@ -14,7 +14,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='created_at',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now, verbose_name='Crido em'),
+            field=models.DateTimeField(
+                auto_now_add=True,
+                default=django.utils.timezone.now,
+                verbose_name='Crido em'
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
@@ -25,6 +29,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='updated_at',
-            field=models.DateTimeField(auto_now=True, verbose_name='Atualizado em'),
+            field=models.DateTimeField(
+                auto_now=True,
+                verbose_name='Atualizado em'
+            ),
         ),
     ]
